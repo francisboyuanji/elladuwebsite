@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Sanity CLI
-        run: npm install -g sanity@latest
-
       - name: Deploy Sanity Studio
         run: sanity deploy --yes --url zhrziy57
         env:
