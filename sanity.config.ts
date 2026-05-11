@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'Ella Du CMS',
   projectId: 'zhrziy57',
   dataset: 'production',
+  studioHost: 'zhrziy57',
   plugins: [
     structureTool({ structure }),
     visionTool(),
