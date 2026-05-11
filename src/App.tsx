@@ -9,23 +9,9 @@ import Home from './pages/Home'
 import Music from './pages/Music'
 import Research from './pages/Research'
 import Life from './pages/Life'
-import Admin from './pages/Admin'
-import StudioPage from './pages/Studio'
 
 export default function App() {
   const location = useLocation()
-  const isStudio = location.pathname === '/studio'
-
-  // Studio renders without layout (no navbar/footer)
-  if (isStudio) {
-    return (
-      <div className="min-h-screen" style={{ backgroundColor: 'var(--cream)' }}>
-        <Routes>
-          <Route path="/studio" element={<StudioPage />} />
-        </Routes>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: 'var(--cream)' }}>
@@ -39,7 +25,6 @@ export default function App() {
               <Route path="/music" element={<Music />} />
               <Route path="/research" element={<Research />} />
               <Route path="/life" element={<Life />} />
-              <Route path="/admin" element={<Admin />} />
             </Routes>
           </PageTransition>
         </AnimatePresence>

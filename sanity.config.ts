@@ -1,17 +1,18 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
-import { schemaTypes } from './src/sanity/schema'
-
-const projectId = import.meta.env.SANITY_PROJECT_ID || process.env.SANITY_PROJECT_ID || 'zhrziy57'
-const dataset = import.meta.env.SANITY_DATASET || process.env.SANITY_DATASET || 'production'
+import { schemaTypes } from './sanity/schemaTypes'
+import { structure } from './sanity/structure'
 
 export default defineConfig({
-  name: 'ella-du-cms',
+  name: 'ella-du-studio',
   title: 'Ella Du CMS',
-  projectId,
-  dataset,
-  plugins: [structureTool(), visionTool()],
+  projectId: 'zhrziy57',
+  dataset: 'production',
+  plugins: [
+    structureTool({ structure }),
+    visionTool(),
+  ],
   schema: {
     types: schemaTypes,
   },
